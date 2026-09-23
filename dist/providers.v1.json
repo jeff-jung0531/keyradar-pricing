@@ -1,0 +1,174 @@
+{
+  "version": "2026-07-12",
+  "currency": "USD",
+  "_doc": "Generated from pricing.json by scripts/build_v1.py - do not edit by hand. Token-billed models only; other billing units cannot be expressed in this format.",
+  "providers": {
+    "openai": [
+      {
+        "model": "gpt-5.5-chat-latest",
+        "inputPerMtoken": 5.0,
+        "outputPerMtoken": 30.0
+      },
+      {
+        "model": "chat-latest",
+        "inputPerMtoken": 5.0,
+        "outputPerMtoken": 30.0
+      },
+      {
+        "model": "gpt-5.4",
+        "inputPerMtoken": 2.5,
+        "outputPerMtoken": 15.0
+      },
+      {
+        "model": "gpt-5.3-chat-latest",
+        "inputPerMtoken": 1.75,
+        "outputPerMtoken": 14.0
+      },
+      {
+        "model": "gpt-5.2-chat-latest",
+        "inputPerMtoken": 1.75,
+        "outputPerMtoken": 14.0
+      },
+      {
+        "model": "gpt-5.1-chat-latest",
+        "inputPerMtoken": 1.25,
+        "outputPerMtoken": 10.0
+      },
+      {
+        "model": "gpt-5-chat-latest",
+        "inputPerMtoken": 1.25,
+        "outputPerMtoken": 10.0
+      },
+      {
+        "model": "gpt-5",
+        "inputPerMtoken": 0.625,
+        "outputPerMtoken": 5.0
+      },
+      {
+        "model": "chatgpt-4o-latest",
+        "inputPerMtoken": 5.0,
+        "outputPerMtoken": 15.0
+      }
+    ],
+    "anthropic": [
+      {
+        "model": "claude-opus-4-8",
+        "inputPerMtoken": 5.0,
+        "outputPerMtoken": 25.0
+      },
+      {
+        "model": "claude-opus-4-7",
+        "inputPerMtoken": 5.0,
+        "outputPerMtoken": 25.0
+      },
+      {
+        "model": "claude-opus-4-5",
+        "inputPerMtoken": 5.0,
+        "outputPerMtoken": 25.0
+      },
+      {
+        "model": "claude-sonnet-5",
+        "inputPerMtoken": 2.0,
+        "outputPerMtoken": 10.0
+      },
+      {
+        "model": "claude-sonnet-4-6",
+        "inputPerMtoken": 3.0,
+        "outputPerMtoken": 15.0
+      },
+      {
+        "model": "claude-sonnet-4-5",
+        "inputPerMtoken": 3.0,
+        "outputPerMtoken": 15.0
+      },
+      {
+        "model": "claude-haiku-4-5",
+        "inputPerMtoken": 1.0,
+        "outputPerMtoken": 5.0
+      }
+    ],
+    "google-gemini": [
+      {
+        "model": "gemini-3.5-flash",
+        "inputPerMtoken": 1.5,
+        "outputPerMtoken": 9.0
+      },
+      {
+        "model": "gemini-3.1-pro",
+        "inputPerMtoken": 2.0,
+        "outputPerMtoken": 12.0
+      },
+      {
+        "model": "gemini-2.5-pro",
+        "inputPerMtoken": 1.25,
+        "outputPerMtoken": 10.0
+      },
+      {
+        "model": "gemini-2.5-flash",
+        "inputPerMtoken": 0.3,
+        "outputPerMtoken": 2.5
+      },
+      {
+        "model": "gemini-2.5-flash-lite",
+        "inputPerMtoken": 0.1,
+        "outputPerMtoken": 0.4
+      }
+    ],
+    "xai": [
+      {
+        "model": "grok-4",
+        "inputPerMtoken": 3.0,
+        "outputPerMtoken": 15.0
+      },
+      {
+        "model": "grok-4.5",
+        "inputPerMtoken": 2.0,
+        "outputPerMtoken": 6.0
+      },
+      {
+        "model": "grok-4.3",
+        "inputPerMtoken": 1.25,
+        "outputPerMtoken": 2.5
+      },
+      {
+        "model": "grok-4.1-fast",
+        "inputPerMtoken": 0.2,
+        "outputPerMtoken": 0.5
+      }
+    ],
+    "mistral": [
+      {
+        "model": "mistral-large-3",
+        "inputPerMtoken": 2.0,
+        "outputPerMtoken": 6.0
+      },
+      {
+        "model": "mistral-large-2",
+        "inputPerMtoken": 2.0,
+        "outputPerMtoken": 6.0
+      },
+      {
+        "model": "mistral-medium",
+        "inputPerMtoken": 0.4,
+        "outputPerMtoken": 2.0
+      },
+      {
+        "model": "mistral-small-3",
+        "inputPerMtoken": 0.1,
+        "outputPerMtoken": 0.3
+      },
+      {
+        "model": "ministral-3b",
+        "inputPerMtoken": 0.04,
+        "outputPerMtoken": 0.04
+      }
+    ],
+    "perplexity": [
+      {
+        "model": "sonar",
+        "inputPerMtoken": 1.0,
+        "outputPerMtoken": 1.0
+      }
+    ]
+  }
+}

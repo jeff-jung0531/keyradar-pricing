@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "KeyRadar pricing table",
+  "type": "object",
+  "required": ["schema_version", "currency", "updated_at", "providers"],
+  "properties": {
+    "schema_version": { "const": 2 },
+    "currency": { "const": "USD" },
+    "updated_at": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "_doc": { "type": "string" },
+    "providers": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["source_url", "checked_at", "models"],
+        "properties": {
+          "source_url": { "type": "string" },
+          "checked_at": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+          "models": { "type": "array", "items": { "$ref": "#/definitions/entry" } }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "entry": {
+      "type": "object",
+      "required": ["model", "unit"],
+      "properties": {
+        "model": { "type": "string", "minLength": 1 },
+        "unit": {
+          "enum": ["per_mtoken", "per_mchar", "per_image", "per_second", "per_request"],
+          "description": "과금 단위. per_mtoken/per_mchar는 100만 단위당 USD."
+        },
+        "input": { "type": "number", "minimum": 0 },
+        "output": { "type": "number", "minimum": 0 },
+        "price": { "type": "number", "minimum": 0,
+          "description": "입출력 구분이 없는 단위(per_image, per_second, per_request)에서 씁니다." },
+        "cache_read": { "type": "number", "minimum": 0 },
+        "cache_write": { "type": "number", "minimum": 0 },
+        "reasoning_output": { "type": "number", "minimum": 0,
+          "description": "추론 토큰이 별도 단가일 때만 씁니다." },
+        "note": { "type": "string" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "unit": { "enum": ["per_mtoken", "per_mchar"] } } },
+          "then": { "required": ["input", "output"] }
+        },
+        {
+          "if": { "properties": { "unit": { "enum": ["per_image", "per_second", "per_request"] } } },
+          "then": { "required": ["price"] }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,230 @@
+{
+  "schema_version": 2,
+  "currency": "USD",
+  "updated_at": "2026-07-12",
+  "_doc": "KeyRadar unit price table. Each model carries the unit it is billed in and the page the number was read from. per_mtoken = USD per 1,000,000 tokens. List price only - cache, batch and volume discounts are not encoded. Seeded from the KeyRadar bundled snapshot dated 2026-07-12; entries keep that checked_at until a routine run re-verifies them.",
+  "providers": {
+    "openai": {
+      "source_url": "https://openai.com/api/pricing/",
+      "checked_at": "2026-07-12",
+      "models": [
+        {
+          "model": "gpt-5.5-chat-latest",
+          "unit": "per_mtoken",
+          "input": 5.0,
+          "output": 30.0
+        },
+        {
+          "model": "chat-latest",
+          "unit": "per_mtoken",
+          "input": 5.0,
+          "output": 30.0
+        },
+        {
+          "model": "gpt-5.4",
+          "unit": "per_mtoken",
+          "input": 2.5,
+          "output": 15.0
+        },
+        {
+          "model": "gpt-5.3-chat-latest",
+          "unit": "per_mtoken",
+          "input": 1.75,
+          "output": 14.0
+        },
+        {
+          "model": "gpt-5.2-chat-latest",
+          "unit": "per_mtoken",
+          "input": 1.75,
+          "output": 14.0
+        },
+        {
+          "model": "gpt-5.1-chat-latest",
+          "unit": "per_mtoken",
+          "input": 1.25,
+          "output": 10.0
+        },
+        {
+          "model": "gpt-5-chat-latest",
+          "unit": "per_mtoken",
+          "input": 1.25,
+          "output": 10.0
+        },
+        {
+          "model": "gpt-5",
+          "unit": "per_mtoken",
+          "input": 0.625,
+          "output": 5.0
+        },
+        {
+          "model": "chatgpt-4o-latest",
+          "unit": "per_mtoken",
+          "input": 5.0,
+          "output": 15.0
+        }
+      ]
+    },
+    "anthropic": {
+      "source_url": "https://www.anthropic.com/pricing",
+      "checked_at": "2026-07-12",
+      "models": [
+        {
+          "model": "claude-opus-4-8",
+          "unit": "per_mtoken",
+          "input": 5.0,
+          "output": 25.0
+        },
+        {
+          "model": "claude-opus-4-7",
+          "unit": "per_mtoken",
+          "input": 5.0,
+          "output": 25.0
+        },
+        {
+          "model": "claude-opus-4-5",
+          "unit": "per_mtoken",
+          "input": 5.0,
+          "output": 25.0
+        },
+        {
+          "model": "claude-sonnet-5",
+          "unit": "per_mtoken",
+          "input": 2.0,
+          "output": 10.0
+        },
+        {
+          "model": "claude-sonnet-4-6",
+          "unit": "per_mtoken",
+          "input": 3.0,
+          "output": 15.0
+        },
+        {
+          "model": "claude-sonnet-4-5",
+          "unit": "per_mtoken",
+          "input": 3.0,
+          "output": 15.0
+        },
+        {
+          "model": "claude-haiku-4-5",
+          "unit": "per_mtoken",
+          "input": 1.0,
+          "output": 5.0
+        }
+      ]
+    },
+    "google-gemini": {
+      "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "checked_at": "2026-07-12",
+      "models": [
+        {
+          "model": "gemini-3.5-flash",
+          "unit": "per_mtoken",
+          "input": 1.5,
+          "output": 9.0
+        },
+        {
+          "model": "gemini-3.1-pro",
+          "unit": "per_mtoken",
+          "input": 2.0,
+          "output": 12.0
+        },
+        {
+          "model": "gemini-2.5-pro",
+          "unit": "per_mtoken",
+          "input": 1.25,
+          "output": 10.0
+        },
+        {
+          "model": "gemini-2.5-flash",
+          "unit": "per_mtoken",
+          "input": 0.3,
+          "output": 2.5
+        },
+        {
+          "model": "gemini-2.5-flash-lite",
+          "unit": "per_mtoken",
+          "input": 0.1,
+          "output": 0.4
+        }
+      ]
+    },
+    "xai": {
+      "source_url": "https://docs.x.ai/docs/models",
+      "checked_at": "2026-07-12",
+      "models": [
+        {
+          "model": "grok-4",
+          "unit": "per_mtoken",
+          "input": 3.0,
+          "output": 15.0
+        },
+        {
+          "model": "grok-4.5",
+          "unit": "per_mtoken",
+          "input": 2.0,
+          "output": 6.0
+        },
+        {
+          "model": "grok-4.3",
+          "unit": "per_mtoken",
+          "input": 1.25,
+          "output": 2.5
+        },
+        {
+          "model": "grok-4.1-fast",
+          "unit": "per_mtoken",
+          "input": 0.2,
+          "output": 0.5
+        }
+      ]
+    },
+    "mistral": {
+      "source_url": "https://mistral.ai/pricing",
+      "checked_at": "2026-07-12",
+      "models": [
+        {
+          "model": "mistral-large-3",
+          "unit": "per_mtoken",
+          "input": 2.0,
+          "output": 6.0
+        },
+        {
+          "model": "mistral-large-2",
+          "unit": "per_mtoken",
+          "input": 2.0,
+          "output": 6.0
+        },
+        {
+          "model": "mistral-medium",
+          "unit": "per_mtoken",
+          "input": 0.4,
+          "output": 2.0
+        },
+        {
+          "model": "mistral-small-3",
+          "unit": "per_mtoken",
+          "input": 0.1,
+          "output": 0.3
+        },
+        {
+          "model": "ministral-3b",
+          "unit": "per_mtoken",
+          "input": 0.04,
+          "output": 0.04
+        }
+      ]
+    },
+    "perplexity": {
+      "source_url": "https://docs.perplexity.ai/getting-started/pricing",
+      "checked_at": "2026-07-12",
+      "models": [
+        {
+          "model": "sonar",
+          "unit": "per_mtoken",
+          "input": 1.0,
+          "output": 1.0
+        }
+      ]
+    }
+  }
+}

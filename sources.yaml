@@ -1,0 +1,80 @@
+# 프로바이더별 가격 페이지. 갱신 루틴이 이 목록을 읽습니다.
+#
+# needs_price_table: true  — 잔액/사용량 API가 없어 단가표가 있어야 비용을 추정할 수 있는 곳
+# needs_price_table: false — 앱이 잔액 차감이나 사용량 API로 실제 지출을 측정하므로 단가가 필요 없는 곳
+
+providers:
+  - id: openai
+    url: https://openai.com/api/pricing/
+    unit: per_mtoken
+    needs_price_table: true
+
+  - id: anthropic
+    url: https://www.anthropic.com/pricing
+    unit: per_mtoken
+    needs_price_table: true
+
+  - id: google-gemini
+    url: https://ai.google.dev/gemini-api/docs/pricing
+    unit: per_mtoken
+    needs_price_table: true
+    note: 무료 등급과 유료 등급의 단가가 다릅니다. 유료 등급 기준으로 읽습니다.
+
+  - id: perplexity
+    url: https://docs.perplexity.ai/getting-started/pricing
+    unit: per_mtoken
+    needs_price_table: true
+    note: 토큰 단가 외에 요청당 검색 비용이 따로 붙습니다.
+
+  - id: mistral
+    url: https://mistral.ai/pricing
+    unit: per_mtoken
+    needs_price_table: true
+
+  - id: xai
+    url: https://docs.x.ai/docs/models
+    unit: per_mtoken
+    needs_price_table: true
+
+  - id: replicate
+    url: https://replicate.com/pricing
+    unit: per_second
+    needs_price_table: true
+    note: 모델이 아니라 하드웨어 종류별 초당 단가입니다.
+
+  # 아래는 앱이 실제 지출을 직접 측정합니다. 단가표가 필요 없습니다.
+  - id: fal-ai
+    url: https://fal.ai/pricing
+    needs_price_table: false
+    note: 잔액 차감으로 측정합니다.
+  - id: kie-ai
+    url: https://kie.ai/pricing
+    needs_price_table: false
+    note: 크레딧 차감으로 측정합니다.
+  - id: elevenlabs
+    url: https://elevenlabs.io/pricing/api
+    needs_price_table: false
+    note: 글자 수 카운터로 측정합니다.
+  - id: luma
+    url: https://lumalabs.ai/api/pricing
+    needs_price_table: false
+  - id: stability
+    url: https://platform.stability.ai/pricing
+    needs_price_table: false
+  - id: tavily
+    url: https://tavily.com/#pricing
+    needs_price_table: false
+
+  # API 자체가 없어 앱이 금액을 잡을 수 없는 곳입니다. 콘솔 확인만 안내합니다.
+  - id: suno
+    url: https://suno.com/pricing
+    needs_price_table: false
+    note: 사용량 API 없음.
+  - id: runway
+    url: https://runwayml.com/pricing
+    needs_price_table: false
+    note: 사용량 API 없음.
+  - id: higgsfield
+    url: https://higgsfield.ai/pricing
+    needs_price_table: false
+    note: 사용량 API 없음.
