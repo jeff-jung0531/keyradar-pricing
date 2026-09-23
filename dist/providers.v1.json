@@ -62,16 +62,6 @@
         "outputPerMtoken": 20.0
       },
       {
-        "model": "claude-opus-5",
-        "inputPerMtoken": 5.0,
-        "outputPerMtoken": 25.0
-      },
-      {
-        "model": "claude-fable-5",
-        "inputPerMtoken": 10.0,
-        "outputPerMtoken": 50.0
-      },
-      {
         "model": "claude-opus-4-8",
         "inputPerMtoken": 5.0,
         "outputPerMtoken": 25.0

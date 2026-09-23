@@ -4,7 +4,10 @@
 
 ## 2026-09-23
 
-- anthropic: 가격 페이지를 다시 확인해 `claude-fable-5-1`, `claude-opus-5-5`, `claude-opus-5`, `claude-fable-5`, `claude-opus-4-6` 모델과 전체 모델의 cache_read/cache_write 단가를 추가했습니다. 기존 모델의 input/output 단가는 변동이 없었습니다.
+- anthropic: 가격 페이지를 다시 확인해 `claude-fable-5-1`, `claude-opus-5-5`, `claude-opus-4-6` 모델과 전체 모델의 cache_read/cache_write(표준/5분 TTL 기준) 단가를 추가했습니다. 기존 모델의 input/output 단가는 변동이 없었습니다.
+- `claude-opus-5`, `claude-fable-5`는 페이지에 API 모델 ID가 표기돼 있지 않아 리뷰 피드백에 따라 제외했습니다. ID를 확인할 수 있게 되면 다시 추가합니다.
+- `scripts/validate.py`가 이제 `cache_read`/`cache_write` 값의 형식과 급변동을 함께 검사합니다.
+- `pricing.json`의 `_doc`과 README에 cache_read/cache_write가 표준(5분 TTL) 캐시 단가이며 연장 TTL은 포함하지 않는다는 점을 명시했습니다.
 - openai, google-gemini, perplexity, mistral, xai, replicate는 네트워크 정책으로 페이지를 읽지 못해 그대로 두었습니다.
 
 ## 2026-09-24
