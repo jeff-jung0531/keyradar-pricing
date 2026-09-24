@@ -4,7 +4,7 @@
 
 ## 2026-09-24 (자동 갱신)
 
-- anthropic: 공식 가격 페이지 대조 완료. 기존 모델 단가는 변동 없음. 새 모델 5종(claude-fable-5-1, claude-opus-5-5, claude-opus-5, claude-fable-5, claude-opus-4-6) 추가, 전 모델에 `cache_read`/`cache_write` 단가 보강.
+- anthropic: 공식 가격 페이지 대조 완료. 기존 모델 단가는 변동 없음. 새 모델 5종(claude-fable-5-1, claude-opus-5-5, claude-opus-5, claude-fable-5, claude-opus-4-6) 추가.
 - openai, google-gemini, perplexity, mistral, xai, replicate: 네트워크 egress 정책으로 이번 실행에서 페이지를 읽지 못함. `checked_at` 유지.
 
 ## 2026-09-24
