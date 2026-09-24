@@ -1,5 +1,5 @@
 {
-  "version": "2026-07-12",
+  "version": "2026-09-24",
   "currency": "USD",
   "_doc": "Generated from pricing.json by scripts/build_v1.py - do not edit by hand. Token-billed models only; other billing units cannot be expressed in this format.",
   "providers": {
@@ -52,19 +52,14 @@
     ],
     "anthropic": [
       {
-        "model": "claude-opus-4-8",
-        "inputPerMtoken": 5.0,
-        "outputPerMtoken": 25.0
+        "model": "claude-fable-5-1",
+        "inputPerMtoken": 10.0,
+        "outputPerMtoken": 50.0
       },
       {
-        "model": "claude-opus-4-7",
-        "inputPerMtoken": 5.0,
-        "outputPerMtoken": 25.0
-      },
-      {
-        "model": "claude-opus-4-5",
-        "inputPerMtoken": 5.0,
-        "outputPerMtoken": 25.0
+        "model": "claude-opus-5-5",
+        "inputPerMtoken": 4.0,
+        "outputPerMtoken": 20.0
       },
       {
         "model": "claude-sonnet-5",
@@ -72,9 +67,39 @@
         "outputPerMtoken": 10.0
       },
       {
+        "model": "claude-haiku-4-5",
+        "inputPerMtoken": 1.0,
+        "outputPerMtoken": 5.0
+      },
+      {
+        "model": "claude-opus-5",
+        "inputPerMtoken": 5.0,
+        "outputPerMtoken": 25.0
+      },
+      {
+        "model": "claude-fable-5",
+        "inputPerMtoken": 10.0,
+        "outputPerMtoken": 50.0
+      },
+      {
+        "model": "claude-opus-4-8",
+        "inputPerMtoken": 5.0,
+        "outputPerMtoken": 25.0
+      },
+      {
         "model": "claude-sonnet-4-6",
         "inputPerMtoken": 3.0,
         "outputPerMtoken": 15.0
+      },
+      {
+        "model": "claude-opus-4-7",
+        "inputPerMtoken": 5.0,
+        "outputPerMtoken": 25.0
+      },
+      {
+        "model": "claude-opus-4-6",
+        "inputPerMtoken": 5.0,
+        "outputPerMtoken": 25.0
       },
       {
         "model": "claude-sonnet-4-5",
@@ -82,9 +107,9 @@
         "outputPerMtoken": 15.0
       },
       {
-        "model": "claude-haiku-4-5",
-        "inputPerMtoken": 1.0,
-        "outputPerMtoken": 5.0
+        "model": "claude-opus-4-5",
+        "inputPerMtoken": 5.0,
+        "outputPerMtoken": 25.0
       }
     ],
     "google-gemini": [
