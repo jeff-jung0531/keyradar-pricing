@@ -13,6 +13,7 @@ import argparse, json, re, sys
 
 UNITS_IO = {"per_mtoken", "per_mchar"}
 UNITS_FLAT = {"per_image", "per_second", "per_request"}
+OPTIONAL_NUMERIC = ("cache_read", "cache_write", "reasoning_output")
 DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 # 하루 사이 2배 이상 뛰면 사람이 봐야 한다. 실제 인하/인상은 보통 이보다 작다.
 JUMP_RATIO = 2.0
@@ -51,13 +52,19 @@ def check_shape(doc, errors):
                     errors.append(f"{pid}/{name}: price 값이 잘못됐습니다 ({v!r})")
             else:
                 errors.append(f"{pid}/{name}: 모르는 unit입니다 ({unit!r})")
+            for f in OPTIONAL_NUMERIC:
+                if f not in m:
+                    continue
+                v = m.get(f)
+                if not isinstance(v, (int, float)) or v < 0:
+                    errors.append(f"{pid}/{name}: {f} 값이 잘못됐습니다 ({v!r})")
 
 
 def flat(doc):
     out = {}
     for pid, p in (doc.get("providers") or {}).items():
         for m in p.get("models") or []:
-            for f in ("input", "output", "price"):
+            for f in ("input", "output", "price", *OPTIONAL_NUMERIC):
                 if isinstance(m.get(f), (int, float)):
                     out[(pid, m["model"], f)] = m[f]
     return out
