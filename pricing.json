@@ -2,7 +2,7 @@
   "schema_version": 2,
   "currency": "USD",
   "updated_at": "2026-09-29",
-  "_doc": "KeyRadar unit price table. Each model carries the unit it is billed in and the page the number was read from. per_mtoken = USD per 1,000,000 tokens. List price only - cache, batch and volume discounts are not encoded. Seeded from the KeyRadar bundled snapshot dated 2026-07-12; entries keep that checked_at until a routine run re-verifies them.",
+  "_doc": "KeyRadar unit price table. Each model carries the unit it is billed in and the page the number was read from. per_mtoken = USD per 1,000,000 tokens. List price only - batch and volume discounts are not encoded. cache_read/cache_write hold the provider's own list price for cache operations when published separately; they are omitted when the provider doesn't publish one. Seeded from the KeyRadar bundled snapshot dated 2026-07-12; entries keep that checked_at until a routine run re-verifies them.",
   "providers": {
     "openai": {
       "source_url": "https://openai.com/api/pricing/",
