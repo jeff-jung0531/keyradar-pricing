@@ -2,7 +2,7 @@
   "schema_version": 2,
   "currency": "USD",
   "updated_at": "2026-09-30",
-  "_doc": "KeyRadar unit price table. Each model carries the unit it is billed in and the page the number was read from. per_mtoken = USD per 1,000,000 tokens. List price only - cache, batch and volume discounts are not encoded. Seeded from the KeyRadar bundled snapshot dated 2026-07-12; entries keep that checked_at until a routine run re-verifies them.",
+  "_doc": "KeyRadar unit price table. Each model carries the unit it is billed in and the page the number was read from. per_mtoken = USD per 1,000,000 tokens. List price only - batch and volume discounts are not encoded. Prompt-cache read/write unit prices are encoded per model in cache_read/cache_write ONLY when the source page states them separately; cache_write always reflects the shortest/default cache TTL - a longer-TTL write rate a provider may also publish (e.g. Anthropic's 1-hour TTL) is not encoded. Seeded from the KeyRadar bundled snapshot dated 2026-07-12; entries keep that checked_at until a routine run re-verifies them.",
   "providers": {
     "openai": {
       "source_url": "https://openai.com/api/pricing/",
@@ -67,6 +67,7 @@
     "anthropic": {
       "source_url": "https://www.anthropic.com/pricing",
       "checked_at": "2026-09-30",
+      "note": "cache_write는 5분 TTL 캐시 쓰기 단가입니다. Anthropic이 별도로 제공하는 1시간 TTL 캐시 쓰기 단가는 이 필드에 넣지 않았습니다 (페이지에서 직접 확인하지 못했습니다).",
       "models": [
         {
           "model": "claude-fable-5-1",
