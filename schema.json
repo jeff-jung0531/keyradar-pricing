@@ -35,8 +35,10 @@
         "output": { "type": "number", "minimum": 0 },
         "price": { "type": "number", "minimum": 0,
           "description": "입출력 구분이 없는 단위(per_image, per_second, per_request)에서 씁니다." },
-        "cache_read": { "type": "number", "minimum": 0 },
-        "cache_write": { "type": "number", "minimum": 0 },
+        "cache_read": { "type": "number", "minimum": 0,
+          "description": "프롬프트 캐시 적중 시 읽기 단가. 페이지에 캐시 단가가 따로 표기된 경우에만 채웁니다." },
+        "cache_write": { "type": "number", "minimum": 0,
+          "description": "프롬프트 캐시 쓰기 단가. 가장 짧은(기본) TTL 기준 단일 값입니다 — 프로바이더가 TTL별로 다른 단가를 제공해도(예: Anthropic의 5분/1시간 TTL) 여기에는 더 긴 TTL의 단가를 넣지 않습니다." },
         "reasoning_output": { "type": "number", "minimum": 0,
           "description": "추론 토큰이 별도 단가일 때만 씁니다." },
         "note": { "type": "string" }
