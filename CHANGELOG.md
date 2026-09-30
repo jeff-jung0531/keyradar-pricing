@@ -2,6 +2,11 @@
 
 형식: `YYYY-MM-DD` / 바뀐 프로바이더 / 사람이 확인한 PR
 
+## 2026-09-30
+
+- anthropic: 가격 페이지(claude.com/pricing)에서 새 모델 6개를 추가하고, 기존 모델 전체에 캐시 단가(`cache_read`/`cache_write`)를 채워 넣었습니다. 토큰 단가 자체는 변동 없습니다.
+- openai, google-gemini, perplexity, mistral, xai, replicate: 네트워크 정책으로 공식 페이지에 접근하지 못해 이번 회차에서는 확인하지 못했습니다.
+
 ## 2026-09-24
 
 - 저장소 개설. KeyRadar 앱에 동봉돼 있던 `2026-07-12` 스냅샷을 그대로 옮겨 왔습니다.
