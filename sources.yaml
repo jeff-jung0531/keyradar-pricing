@@ -10,9 +10,10 @@ providers:
     needs_price_table: true
 
   - id: anthropic
-    url: https://www.anthropic.com/pricing
+    url: https://claude.com/pricing
     unit: per_mtoken
     needs_price_table: true
+    note: www.anthropic.com/pricing가 이 주소로 301 리다이렉트됩니다. 최종 주소를 직접 적어 둡니다.
 
   - id: google-gemini
     url: https://ai.google.dev/gemini-api/docs/pricing
