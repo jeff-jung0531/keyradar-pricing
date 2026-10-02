@@ -18,6 +18,9 @@ DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 JUMP_RATIO = 2.0
 
 
+OPTIONAL_NUMERIC_FIELDS = ("cache_read", "cache_write", "reasoning_output")
+
+
 def check_shape(doc, errors):
     if doc.get("schema_version") != 2:
         errors.append("schema_version이 2가 아닙니다")
@@ -51,13 +54,19 @@ def check_shape(doc, errors):
                     errors.append(f"{pid}/{name}: price 값이 잘못됐습니다 ({v!r})")
             else:
                 errors.append(f"{pid}/{name}: 모르는 unit입니다 ({unit!r})")
+            for f in OPTIONAL_NUMERIC_FIELDS:
+                if f not in m:
+                    continue
+                v = m.get(f)
+                if not isinstance(v, (int, float)) or v < 0:
+                    errors.append(f"{pid}/{name}: {f} 값이 잘못됐습니다 ({v!r})")
 
 
 def flat(doc):
     out = {}
     for pid, p in (doc.get("providers") or {}).items():
         for m in p.get("models") or []:
-            for f in ("input", "output", "price"):
+            for f in ("input", "output", "price") + OPTIONAL_NUMERIC_FIELDS:
                 if isinstance(m.get(f), (int, float)):
                     out[(pid, m["model"], f)] = m[f]
     return out
