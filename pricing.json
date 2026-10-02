@@ -2,7 +2,7 @@
   "schema_version": 2,
   "currency": "USD",
   "updated_at": "2026-10-02",
-  "_doc": "KeyRadar unit price table. Each model carries the unit it is billed in and the page the number was read from. per_mtoken = USD per 1,000,000 tokens. List price only - cache, batch and volume discounts are not encoded. Seeded from the KeyRadar bundled snapshot dated 2026-07-12; entries keep that checked_at until a routine run re-verifies them.",
+  "_doc": "KeyRadar unit price table. Each model carries the unit it is billed in and the page the number was read from. per_mtoken = USD per 1,000,000 tokens. List price only - batch and volume discounts are not encoded. Where a provider publishes separate prompt-caching rates, they are encoded in cache_read/cache_write; cache_write is the shortest cache-write duration the provider lists (e.g. Anthropic's 5-minute cache write, not the 1-hour rate). A model without cache_read/cache_write simply means that provider's page did not show one, not that caching is free. Seeded from the KeyRadar bundled snapshot dated 2026-07-12; entries keep that checked_at until a routine run re-verifies them.",
   "providers": {
     "openai": {
       "source_url": "https://openai.com/api/pricing/",
