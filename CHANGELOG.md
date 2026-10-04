@@ -2,6 +2,11 @@
 
 형식: `YYYY-MM-DD` / 바뀐 프로바이더 / 사람이 확인한 PR
 
+## 2026-10-04
+
+- anthropic: 새 모델 6종 추가 (claude-opus-5-5, claude-sonnet-5-5, claude-fable-5-1, claude-opus-5, claude-fable-5, claude-opus-4-6). 기존 모델 단가는 변동 없었습니다.
+- 네트워크 정책으로 openai, google-gemini, perplexity, mistral, xai, replicate 가격 페이지에는 접근하지 못해 대조하지 못했습니다.
+
 ## 2026-09-24
 
 - 저장소 개설. KeyRadar 앱에 동봉돼 있던 `2026-07-12` 스냅샷을 그대로 옮겨 왔습니다.
