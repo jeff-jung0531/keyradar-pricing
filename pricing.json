@@ -2,7 +2,7 @@
   "schema_version": 2,
   "currency": "USD",
   "updated_at": "2026-10-08",
-  "_doc": "KeyRadar unit price table. Each model carries the unit it is billed in and the page the number was read from. per_mtoken = USD per 1,000,000 tokens. List price only - cache, batch and volume discounts are not encoded. Seeded from the KeyRadar bundled snapshot dated 2026-07-12; entries keep that checked_at until a routine run re-verifies them.",
+  "_doc": "KeyRadar unit price table. Each model carries the unit it is billed in and the page the number was read from. per_mtoken = USD per 1,000,000 tokens. List price only - batch and volume discounts are not encoded. cache_write/cache_read, where present, are the default 5-minute-TTL prompt-caching rates; the 1-hour-TTL cache write rate (billed separately, at a higher multiple of input) is not encoded. Seeded from the KeyRadar bundled snapshot dated 2026-07-12; entries keep that checked_at until a routine run re-verifies them.",
   "providers": {
     "openai": {
       "source_url": "https://openai.com/api/pricing/",
@@ -155,16 +155,7 @@
           "output": 0.50,
           "cache_write": 0.125,
           "cache_read": 0.01,
-          "note": "컨텍스트 100K 토큰 이하 구간 단가"
-        },
-        {
-          "model": "claude-haiku-5-5-long",
-          "unit": "per_mtoken",
-          "input": 0.50,
-          "output": 2.50,
-          "cache_write": 0.625,
-          "cache_read": 0.05,
-          "note": "claude-haiku-5-5의 컨텍스트 100K 토큰 초과 구간 단가"
+          "note": "표시된 단가는 컨텍스트 100K 토큰 이하 구간 기준. 100K 초과 시 API가 같은 모델 ID로 input $0.50/output $2.50/cache_write $0.625/cache_read $0.05를 적용하지만, 이 스키마는 모델당 단가 한 줄만 표현해 그 구간은 반영하지 못함"
         },
         {
           "model": "claude-haiku-4-5",
