@@ -35,10 +35,14 @@
         "output": { "type": "number", "minimum": 0 },
         "price": { "type": "number", "minimum": 0,
           "description": "입출력 구분이 없는 단위(per_image, per_second, per_request)에서 씁니다." },
-        "cache_read": { "type": "number", "minimum": 0 },
-        "cache_write": { "type": "number", "minimum": 0 },
+        "cache_read": { "type": "number", "minimum": 0,
+          "description": "프롬프트 캐시 읽기(히트) 단가. 정가이며 볼륨 할인이 아닙니다." },
+        "cache_write": { "type": "number", "minimum": 0,
+          "description": "프롬프트 캐시 쓰기 단가. 여러 TTL이 있는 프로바이더는 가장 짧은(저렴한) TTL 기준값을 넣고 note에 밝힙니다." },
         "reasoning_output": { "type": "number", "minimum": 0,
           "description": "추론 토큰이 별도 단가일 때만 씁니다." },
+        "tiered_pricing": { "type": "boolean",
+          "description": "true면 실제 단가가 프롬프트 길이 등 조건에 따라 달라져 input/output 두 칸으로 표현할 수 없다는 뜻입니다. 이 경우 input/output에는 가장 낮은(기본) 구간의 값을 넣고 note에 다른 구간 단가를 적습니다. scripts/build_v1.py는 이 모델을 2칸짜리 구버전 형식으로 내보내지 않습니다." },
         "note": { "type": "string" }
       },
       "allOf": [

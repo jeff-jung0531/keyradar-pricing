@@ -4,6 +4,8 @@
 현재 출시된 KeyRadar는 토큰 단가 두 칸짜리 구버전 형식만 읽는다. 앱이 v2를
 읽도록 바뀌기 전까지, 토큰 과금 모델만 추려 구버전 형식으로도 내보낸다.
 per_image/per_second 같은 단위는 구버전 형식으로 표현할 수 없으므로 빠진다.
+tiered_pricing이 true인 모델도 뺀다 — input/output 두 칸만으로는 어느 구간의
+단가인지 알 수 없어, 조용히 틀린 금액을 내보내는 것보다 비우는 쪽을 택한다.
 """
 import json, pathlib
 
@@ -14,7 +16,7 @@ providers, dropped = {}, 0
 for pid, p in doc["providers"].items():
     rows = []
     for m in p["models"]:
-        if m["unit"] != "per_mtoken":
+        if m["unit"] != "per_mtoken" or m.get("tiered_pricing"):
             dropped += 1
             continue
         rows.append({"model": m["model"],
