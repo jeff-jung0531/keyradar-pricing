@@ -51,13 +51,16 @@ def check_shape(doc, errors):
                     errors.append(f"{pid}/{name}: price 값이 잘못됐습니다 ({v!r})")
             else:
                 errors.append(f"{pid}/{name}: 모르는 unit입니다 ({unit!r})")
+            for f in ("cache_read", "cache_write", "reasoning_output"):
+                if f in m and (not isinstance(m[f], (int, float)) or m[f] < 0):
+                    errors.append(f"{pid}/{name}: {f} 값이 잘못됐습니다 ({m[f]!r})")
 
 
 def flat(doc):
     out = {}
     for pid, p in (doc.get("providers") or {}).items():
         for m in p.get("models") or []:
-            for f in ("input", "output", "price"):
+            for f in ("input", "output", "price", "cache_read", "cache_write", "reasoning_output"):
                 if isinstance(m.get(f), (int, float)):
                     out[(pid, m["model"], f)] = m[f]
     return out

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "currency": "USD",
   "updated_at": "2026-10-10",
-  "_doc": "KeyRadar unit price table. Each model carries the unit it is billed in and the page the number was read from. per_mtoken = USD per 1,000,000 tokens. List price only - cache, batch and volume discounts are not encoded. Seeded from the KeyRadar bundled snapshot dated 2026-07-12; entries keep that checked_at until a routine run re-verifies them.",
+  "_doc": "KeyRadar unit price table. Each model carries the unit it is billed in and the page the number was read from. per_mtoken = USD per 1,000,000 tokens. List price only - batch and volume discounts are not encoded. When a provider's page lists a separate per-unit cache price, it goes in cache_write/cache_read; these are standard list rates, not a discount program, and (for Anthropic) are the 5-minute-TTL cache write price, not the pricier 1-hour-TTL one. tiered_pricing: true on a model means its real price depends on a condition (e.g. prompt length) this schema cannot express as a single input/output pair; scripts/build_v1.py excludes such models rather than publish a misleading flat rate. Seeded from the KeyRadar bundled snapshot dated 2026-07-12; entries keep that checked_at until a routine run re-verifies them.",
   "providers": {
     "openai": {
       "source_url": "https://openai.com/api/pricing/",
@@ -77,6 +77,15 @@
           "cache_read": 0.25
         },
         {
+          "model": "claude-mythos-5-1",
+          "unit": "per_mtoken",
+          "input": 10.0,
+          "output": 50.0,
+          "cache_write": 12.5,
+          "cache_read": 0.25,
+          "note": "claude-fable-5-1과 동일 단가. Cyber Verification Program 등으로 검증된 조직만 접근 가능 (platform.claude.com/docs/en/models/fable-5-1/whats-new-fable-5-1 확인)"
+        },
+        {
           "model": "claude-opus-5-5",
           "unit": "per_mtoken",
           "input": 4.0,
@@ -99,6 +108,7 @@
           "output": 0.5,
           "cache_write": 0.125,
           "cache_read": 0.01,
+          "tiered_pricing": true,
           "note": "prompt 100K 토큰 이하 기준. 100K 초과 시 input 0.50 / output 2.50 / cache_write 0.625 / cache_read 0.05 (2026-10-10 확인)"
         },
         {
@@ -116,6 +126,15 @@
           "output": 50.0,
           "cache_write": 12.5,
           "cache_read": 1.0
+        },
+        {
+          "model": "claude-mythos-5",
+          "unit": "per_mtoken",
+          "input": 10.0,
+          "output": 50.0,
+          "cache_write": 12.5,
+          "cache_read": 1.0,
+          "note": "claude-fable-5와 동일 단가. Cyber Verification Program 등으로 검증된 조직만 접근 가능 (platform.claude.com/docs/en/models/fable-5/introducing-claude-fable-5-and-claude-mythos-5 확인)"
         },
         {
           "model": "claude-opus-4-8",
