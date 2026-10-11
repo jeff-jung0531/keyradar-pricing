@@ -36,9 +36,12 @@
         "price": { "type": "number", "minimum": 0,
           "description": "입출력 구분이 없는 단위(per_image, per_second, per_request)에서 씁니다." },
         "cache_read": { "type": "number", "minimum": 0 },
-        "cache_write": { "type": "number", "minimum": 0 },
+        "cache_write": { "type": "number", "minimum": 0,
+          "description": "캐시 생성(쓰기) 단가. TTL이 여러 개인 프로바이더(예: Anthropic의 5분/1시간)는 가장 짧은 TTL 단가만 씁니다. 더 긴 TTL은 보통 더 비싸므로 이 필드로 그 비용을 추정하지 마십시오." },
         "reasoning_output": { "type": "number", "minimum": 0,
           "description": "추론 토큰이 별도 단가일 때만 씁니다." },
+        "tier_dependent": { "type": "boolean",
+          "description": "true면 이 모델의 단가가 프롬프트 길이 등 조건에 따라 달라져 input/output 숫자만으로는 전체를 표현할 수 없다는 뜻입니다. 조건은 note에 적습니다. scripts/build_v1.py는 이 값이 true인 모델을 구버전(v1) 출력에서 제외합니다." },
         "note": { "type": "string" }
       },
       "allOf": [
