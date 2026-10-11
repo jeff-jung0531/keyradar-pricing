@@ -163,7 +163,8 @@
           "output": 0.5,
           "cache_read": 0.01,
           "cache_write": 0.125,
-          "note": "프롬프트가 100K 토큰을 넘으면 input $0.50 / output $2.50 / cache_read $0.05 / cache_write $0.625로 오릅니다."
+          "tier_dependent": true,
+          "note": "프롬프트가 100K 토큰을 넘으면 input $0.50 / output $2.50 / cache_read $0.05 / cache_write $0.625로 오릅니다. tier_dependent: true — 단일 단가로 표현할 수 없어 scripts/build_v1.py가 구버전(v1) 출력에서 이 모델을 제외합니다."
         },
         {
           "model": "claude-fable-5",

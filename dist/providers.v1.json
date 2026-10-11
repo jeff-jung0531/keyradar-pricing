@@ -1,7 +1,7 @@
 {
   "version": "2026-10-11",
   "currency": "USD",
-  "_doc": "Generated from pricing.json by scripts/build_v1.py - do not edit by hand. Token-billed models only; other billing units cannot be expressed in this format.",
+  "_doc": "Generated from pricing.json by scripts/build_v1.py - do not edit by hand. Token-billed models only; other billing units cannot be expressed in this format. Models with tier_dependent pricing (rates that change with prompt length) are also excluded, since this format has no way to encode the threshold.",
   "providers": {
     "openai": [
       {
@@ -105,11 +105,6 @@
         "model": "claude-haiku-4-5",
         "inputPerMtoken": 1.0,
         "outputPerMtoken": 5.0
-      },
-      {
-        "model": "claude-haiku-5-5",
-        "inputPerMtoken": 0.1,
-        "outputPerMtoken": 0.5
       },
       {
         "model": "claude-fable-5",
