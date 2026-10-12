@@ -2,6 +2,11 @@
 
 형식: `YYYY-MM-DD` / 바뀐 프로바이더 / 사람이 확인한 PR
 
+## 2026-10-12
+
+- anthropic: Fable 5.1 / Opus 5.5 / Sonnet 5.5 / Haiku 5.5(2단계 구간 포함) / Opus 5 / Fable 5 / Opus 4.6 모델을 새로 추가했습니다. 기존에 있던 모델의 단가는 바뀌지 않았습니다.
+- openai, google-gemini, perplexity, mistral, xai, replicate는 이 환경의 네트워크 정책이 해당 도메인을 막아 이번에는 확인하지 못했습니다.
+
 ## 2026-09-24
 
 - 저장소 개설. KeyRadar 앱에 동봉돼 있던 `2026-07-12` 스냅샷을 그대로 옮겨 왔습니다.
