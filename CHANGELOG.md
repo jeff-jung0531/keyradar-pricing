@@ -4,7 +4,7 @@
 
 ## 2026-10-12
 
-- anthropic: Fable 5.1 / Opus 5.5 / Sonnet 5.5 / Haiku 5.5(2단계 구간 포함) / Opus 5 / Fable 5 / Opus 4.6 모델을 새로 추가했습니다. 기존에 있던 모델의 단가는 바뀌지 않았습니다.
+- anthropic: Fable 5.1 / Opus 5.5 / Sonnet 5.5 / Haiku 5.5 / Opus 5 / Fable 5 / Opus 4.6 모델을 새로 추가했습니다. 기존에 있던 모델의 단가는 바뀌지 않았습니다. Haiku 5.5는 10만 토큰 초과 구간의 단가가 따로 있지만, API가 보고하는 모델명이 구간과 무관하게 같아 앱이 조회할 수 없으므로 별도 모델로 넣지 않고 note로만 남겼습니다.
 - openai, google-gemini, perplexity, mistral, xai, replicate는 이 환경의 네트워크 정책이 해당 도메인을 막아 이번에는 확인하지 못했습니다.
 
 ## 2026-09-24

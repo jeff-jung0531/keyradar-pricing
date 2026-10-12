@@ -72,11 +72,6 @@
         "outputPerMtoken": 0.5
       },
       {
-        "model": "claude-haiku-5-5-long-context",
-        "inputPerMtoken": 0.5,
-        "outputPerMtoken": 2.5
-      },
-      {
         "model": "claude-opus-4-8",
         "inputPerMtoken": 5.0,
         "outputPerMtoken": 25.0
