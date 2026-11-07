@@ -2,11 +2,6 @@
 
 형식: `YYYY-MM-DD` / 바뀐 프로바이더 / 사람이 확인한 PR
 
-## 2026-11-07
-
-- anthropic: `platform.claude.com/docs/en/about-claude/pricing`에서 모델 전체를 다시 대조했고, 기존 14개 모델의 입력·출력·캐시 쓰기(5분/1시간)·캐시 읽기 단가는 전부 기존 값과 일치했습니다(바뀐 값 없음). 이 페이지에만 있던 5개 모델(Claude Mythos 5.1, Claude Mythos 5, Claude Opus 4.1, Claude Opus 4, Claude Sonnet 4)을 새로 추가했습니다.
-- openai, google-gemini, perplexity, mistral, xai는 이번에도 이 환경의 네트워크 정책이 해당 도메인(openai.com, developers.openai.com, ai.google.dev, docs.perplexity.ai, mistral.ai, docs.x.ai)에 대한 DNS 조회 자체를 막아 확인하지 못했습니다. 저장소 개설(2026-07-12 스냅샷) 이후 118일째 재확인되지 않고 있습니다.
-
 ## 2026-10-31
 
 - anthropic: `platform.claude.com/docs/en/about-claude/pricing`에서 14개 모델 전부의 입력·출력·캐시 쓰기(5분)·캐시 읽기 단가를 다시 대조했고, 전부 기존 값과 일치했습니다(바뀐 값 없음). 다만 이 페이지에 1시간 TTL 캐시 쓰기 단가가 처음으로 확인되어, `schema.json`에 해당 필드가 없으므로 14개 모델 전부에 `note`로 추가했습니다(예: Fable 5.1 $20, Opus 5.5 $8, Sonnet 5.5 $4, Opus 계열 $10, Sonnet 4.x 계열 $6, Haiku 4.5 $2, Haiku 5.5 $0.20/$1).

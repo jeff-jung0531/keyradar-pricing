@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-07",
+  "version": "2026-10-31",
   "currency": "USD",
   "_doc": "Generated from pricing.json by scripts/build_v1.py - do not edit by hand. Token-billed models only; other billing units cannot be expressed in this format.",
   "providers": {
@@ -120,31 +120,6 @@
         "model": "claude-haiku-4-5",
         "inputPerMtoken": 1.0,
         "outputPerMtoken": 5.0
-      },
-      {
-        "model": "claude-mythos-5-1",
-        "inputPerMtoken": 10.0,
-        "outputPerMtoken": 50.0
-      },
-      {
-        "model": "claude-mythos-5",
-        "inputPerMtoken": 10.0,
-        "outputPerMtoken": 50.0
-      },
-      {
-        "model": "claude-opus-4-1",
-        "inputPerMtoken": 15.0,
-        "outputPerMtoken": 75.0
-      },
-      {
-        "model": "claude-opus-4",
-        "inputPerMtoken": 15.0,
-        "outputPerMtoken": 75.0
-      },
-      {
-        "model": "claude-sonnet-4",
-        "inputPerMtoken": 3.0,
-        "outputPerMtoken": 15.0
       }
     ],
     "google-gemini": [
