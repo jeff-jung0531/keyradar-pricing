@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "currency": "USD",
-  "updated_at": "2026-10-31",
+  "updated_at": "2026-11-10",
   "_doc": "KeyRadar unit price table. Each model carries the unit it is billed in and the page the number was read from. per_mtoken = USD per 1,000,000 tokens. List price only - cache, batch and volume discounts are not encoded. Seeded from the KeyRadar bundled snapshot dated 2026-07-12; entries keep that checked_at until a routine run re-verifies them.",
   "providers": {
     "openai": {
@@ -66,8 +66,17 @@
     },
     "anthropic": {
       "source_url": "https://www.anthropic.com/pricing",
-      "checked_at": "2026-10-31",
+      "checked_at": "2026-11-10",
       "models": [
+        {
+          "model": "claude-fable-5-2",
+          "unit": "per_mtoken",
+          "input": 8.0,
+          "output": 40.0,
+          "cache_write": 10.0,
+          "cache_read": 0.20,
+          "note": "1시간 TTL 쓰기 $16"
+        },
         {
           "model": "claude-fable-5-1",
           "unit": "per_mtoken",

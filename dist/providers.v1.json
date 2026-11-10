@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-31",
+  "version": "2026-11-10",
   "currency": "USD",
   "_doc": "Generated from pricing.json by scripts/build_v1.py - do not edit by hand. Token-billed models only; other billing units cannot be expressed in this format.",
   "providers": {
@@ -51,6 +51,11 @@
       }
     ],
     "anthropic": [
+      {
+        "model": "claude-fable-5-2",
+        "inputPerMtoken": 8.0,
+        "outputPerMtoken": 40.0
+      },
       {
         "model": "claude-fable-5-1",
         "inputPerMtoken": 10.0,
